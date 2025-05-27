@@ -23,7 +23,6 @@ const Form = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí puedes cambiar la URL por la de tu API real
     try {
       const response = await fetch("https://tu-api.com/endpoint", {
         method: "POST",
@@ -44,74 +43,104 @@ const Form = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Nombres:</label>
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-md mx-auto mt-10 p-8 bg-white rounded-lg shadow-md"
+    >
+      <div className="mb-4">
+        <label className="block mb-1 font-semibold text-gray-800">
+          Nombres:
+        </label>
         <input
           type="text"
           name="nombres"
           value={formData.nombres}
           onChange={handleChange}
           required
+          placeholder="Ingrese sus nombres"
+          className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-700"
         />
       </div>
-      <div>
-        <label>Apellidos:</label>
+      <div className="mb-4">
+        <label className="block mb-1 font-semibold text-gray-800">
+          Apellidos:
+        </label>
         <input
           type="text"
           name="apellidos"
           value={formData.apellidos}
           onChange={handleChange}
           required
+          placeholder="Ingrese sus apellidos"
+          className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-700"
         />
       </div>
-      <div>
-        <label>Cédula:</label>
+      <div className="mb-4">
+        <label className="block mb-1 font-semibold text-gray-800">
+          Cédula:
+        </label>
         <input
           type="text"
           name="cedula"
           value={formData.cedula}
           onChange={handleChange}
           required
+          placeholder="Ingrese su cédula"
+          className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-700"
         />
       </div>
-      <div>
-        <label>Fecha de nacimiento:</label>
+      <div className="mb-4">
+        <label className="block mb-1 font-semibold text-gray-800">
+          Fecha de nacimiento:
+        </label>
         <input
           type="date"
           name="fechaNacimiento"
           value={formData.fechaNacimiento}
           onChange={handleChange}
           required
+          placeholder="Seleccione su fecha de nacimiento"
+          className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-700"
         />
       </div>
-      <div>
-        <label>Ciudad de nacimiento:</label>
+      <div className="mb-4">
+        <label className="block mb-1 font-semibold text-gray-800">
+          Ciudad de nacimiento:
+        </label>
         <input
           type="text"
           name="ciudadNacimiento"
           value={formData.ciudadNacimiento}
           onChange={handleChange}
           required
+          placeholder="Ingrese su ciudad de nacimiento"
+          className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-700"
         />
       </div>
-      <div>
-        <label>Ciudad de residencia:</label>
+      <div className="mb-4">
+        <label className="block mb-1 font-semibold text-gray-800">
+          Ciudad de residencia:
+        </label>
         <input
           type="text"
           name="ciudadResidencia"
           value={formData.ciudadResidencia}
           onChange={handleChange}
           required
+          placeholder="Ingrese su ciudad de residencia"
+          className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-700"
         />
       </div>
-      <div>
-        <label>Estado civil:</label>
+      <div className="mb-6">
+        <label className="block mb-1 font-semibold text-gray-800">
+          Estado civil:
+        </label>
         <select
           name="estadoCivil"
           value={formData.estadoCivil}
           onChange={handleChange}
           required
+          className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-700"
         >
           <option value="">Seleccione</option>
           <option value="soltero">Soltero</option>
@@ -120,7 +149,12 @@ const Form = () => {
           <option value="viudo">Viudo</option>
         </select>
       </div>
-      <button type="submit">Enviar</button>
+      <button
+        type="submit"
+        className="w-full bg-blue-600 text-white py-2 rounded font-bold hover:bg-blue-700 transition"
+      >
+        Enviar
+      </button>
     </form>
   );
 };
